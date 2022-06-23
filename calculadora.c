@@ -1,4 +1,14 @@
+/*
+Nombre del programa: calculadora.c
+Descripcion: Programa que pide dos numeros y luego desplega un menú para elegir la opccion que quieres elegir
+Autor: Aaron Rojas Gutierrez
+Fecha 23/06/2022
+Version: 1.1
+*/
+
 #include <stdio.h>
+
+//Declaramos las directivas para el procesador
 
 void pideNum(int*);
 void selecMenu(int*);
@@ -8,9 +18,13 @@ int multi(int,int);
 float divi(int,int);
 void menu(int,int,int);
 
+//Iniciamos la funcion principal
+
 int main(){
+    //Creamos las variables para alamcenar los valores 
     int num1,num2,men;
 
+    //Llamamos a las funciones para recoger los numeros y desplegar el menu
     pideNum(&num1);
     pideNum(&num2);
     selecMenu(&men);
@@ -19,10 +33,24 @@ int main(){
     return 0;
 }
 
+/*
+ * @function: pideNum
+ * @description: Recoge un numero y lo almacena por referencia
+ * @param: int
+ * @return: void
+*/
+
 void pideNum(int *num){
     printf("Introduzca un numero: \n");
     scanf("%d",num);
 }
+
+/*
+ * @function: selecMenu
+ * @description: Despliega el menu y recoge la eleccion del usuario
+ * @param: int
+ * @return: void
+*/
 
 void selecMenu(int *men){
     printf("Selecione la opcion que desea: \n");
@@ -34,12 +62,26 @@ void selecMenu(int *men){
     scanf("%d",men);
 }
 
+/*
+ * @function: suma
+ * @description: Suma dos numeros
+ * @param: int
+ * @return: int
+*/
+
 int suma(int num1,int num2){
     int suma;
     suma=num1+num2;
 
     return suma;
 }
+
+/*
+ * @function: resta
+ * @description: Resta dos numeros
+ * @param: int
+ * @return: int
+*/
 
 int resta(int num1,int num2){
     int resta;
@@ -48,6 +90,13 @@ int resta(int num1,int num2){
     return resta;
 }
 
+/*
+ * @function: multi
+ * @description: Multiplica dos numeros
+ * @param: int
+ * @return: int
+*/
+
 int multi(int num1,int num2){
     int multi;
     multi=num1*num2;
@@ -55,12 +104,26 @@ int multi(int num1,int num2){
     return multi;
 }
 
+/*
+ * @function: divi
+ * @description: Divide dos numeros
+ * @param: int
+ * @return: float
+*/
+
 float divi(int num1,int num2){
     float divi;
     divi=(float)num1/num2;
 
     return divi;
 }
+
+/*
+ * @function: menu
+ * @description: Ejecuta las diferentes funciones
+ * @param: int
+ * @return: void
+*/
 
 void menu(int men,int num1,int num2){
     int sum,res,mul;
