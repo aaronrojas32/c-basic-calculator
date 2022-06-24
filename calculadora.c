@@ -22,13 +22,22 @@ void menu(int,int,int);
 
 int main(){
     //Creamos las variables para alamcenar los valores 
-    int num1,num2,men;
+    int num1,num2,men,rep;
 
     //Llamamos a las funciones para recoger los numeros y desplegar el menu
     pideNum(&num1);
     pideNum(&num2);
     selecMenu(&men);
     menu(men,num1,num2);
+    //Creamos un apartado para repetir el programa
+    printf("Si desea repetir el programa pulse 1, si no, pulse cualqier otro numero\n");
+    scanf("%d",&rep);
+    if(rep==1){
+        main();
+    }
+    else{
+        printf("Fin del programa\n");
+    }
 
     return 0;
 }
@@ -147,7 +156,7 @@ void menu(int men,int num1,int num2){
 
     case 4:
         div=divi(num1,num2);
-        printf("La division de %d y %d es: %d \n",num1,num2,div);
+        printf("La division de %d y %d es: %g \n",num1,num2,div);
         break;
     }
 }
